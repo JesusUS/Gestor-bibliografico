@@ -37,6 +37,9 @@ int main(){
 				update_publication (primero, id);
 				break;
 			case 5:
+				printf ("ID: ");
+				id = data_read();				
+				delete_publication (primero, id);
 				break;
 			case 6:
 				break;

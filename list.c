@@ -205,6 +205,44 @@ void update_publication (struct publicacion *primero, int id){
 }
 
 /**
+ * Funcion que elimina la publicacion cuyo id se pasa como argumento
+ * 
+ * 
+ * */
+void delete_publication (struct publicacion *primero, int id){
+	
+	struct publicacion *aux, *prev;
+	aux = primero->next;
+	prev = primero;
+	
+	if (primero->id == id){
+		struct publicacion *tmp = primero;
+		primero = primero->next;
+		free (tmp);
+		return;
+	}
+	
+	while (aux != NULL && prev != NULL){
+		
+		if ( id == aux->id ){
+			struct publicacion *tmp = aux;
+			prev->next = aux->next;
+			free (tmp->titulo_publicacion);
+			free (tmp->nombre_fuente);
+			free (tmp->autores);
+			if (tmp->tipo_contribucion == 0)
+				free (tmp->lugar_conferencia);	
+			free (tmp);
+			return;
+		}
+		prev = aux;
+		aux = aux->next;		
+	}
+	return;
+}
+
+
+/**
  * Funcion que libera toda la memoria reservada por el resto de funciones
  * 
  * 

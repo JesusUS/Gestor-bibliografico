@@ -10,6 +10,7 @@ void add_node(struct publicacion **primero);
 void show_list(struct publicacion *primero);
 void show_publication(struct publicacion *, int);
 void update_publication (struct publicacion *, int);
+void delete_publication (struct publicacion *, int);
 void delete_list(struct publicacion *primero);
 
 
