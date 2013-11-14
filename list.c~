@@ -132,6 +132,20 @@ void show_list(struct publicacion *primero){
 			printf ("Titulo de la publicacion: %s\n", aux->titulo_publicacion);
 		else
 			fwrite (aux->titulo_publicacion, sizeof(char), 30, stdout);
+		
+		//printf ("Titulo de la publicacion: %s\n", aux->titulo_publicacion);
+		//printf ("Nombre de la fuente: %s\n", aux->nombre_fuente);
+		//printf ("Autores: %s\n", aux->autores);
+		//printf ("Ano de publicacion: %i\n", aux->ano_publicacion);
+		//printf ("ISBN/ISSN: %li\n", aux->isbn_issn);
+		
+		//if (aux->tipo_contribucion == 0)
+			//printf ("Lugar de la conferencia: %s\n", aux->lugar_conferencia);
+		//else if (aux->tipo_contribucion == 1){
+			//printf ("Volumen de la revista: %i\n", aux->vol_revista);
+			//printf ("Numero de la revista: %i\n", aux->num_revista);
+		//}
+		
 		printf ("\n-----------------------------------\n");
 		
 		aux = aux->next;
@@ -173,38 +187,6 @@ void show_publication(struct publicacion *primero, int id){
 }
 
 /**
- * Funcion que modifica una publicacion, pasando su id como argumento a la funcion
- * 
- * 
- * */
-void update_publication (struct publicacion **primero, int id){
-	
-	struct publicacion *aux;
-	aux = *primero;
-	char *titulo_publicacion;
-	
-	while (aux != NULL){
-		
-		if (aux->id == id){
-			
-			printf ("Titulo de la publicacion: ");
-			titulo_publicacion = string_read();
-			strcpy(aux->titulo_publicacion, titulo_publicacion);
-			free (titulo_publicacion);
-			
-			return;
-			
-		} else {
-			aux = aux->next;
-		}
-		
-	}
-	
-	return;
-	
-}
-
-/**
  * Funcion que libera toda la memoria reservada por el resto de funciones
  * 
  * 
@@ -228,3 +210,7 @@ void delete_list(struct publicacion *primero){
 	}
 		
 }
+
+
+
+

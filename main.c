@@ -11,8 +11,8 @@ int main(){
 	while (seguir){
 		
 		print_menu();
+		printf("\nOpcion: ");			
 		opcion = data_read();	
-		printf("\n");	
 		
 		switch (opcion){	
 					
@@ -32,6 +32,9 @@ int main(){
 				show_publication(primero, id);
 				break;
 			case 4:
+				printf ("ID: ");
+				id = data_read();
+				update_publication (&primero, id);
 				break;
 			case 5:
 				break;
