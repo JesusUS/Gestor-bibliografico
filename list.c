@@ -177,10 +177,10 @@ void show_publication(struct publicacion *primero, int id){
  * 
  * 
  * */
-void update_publication (struct publicacion **primero, int id){
+void update_publication (struct publicacion *primero, int id){
 	
 	struct publicacion *aux;
-	aux = *primero;
+	aux = primero;
 	char *titulo_publicacion;
 	
 	while (aux != NULL){
