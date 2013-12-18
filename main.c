@@ -46,10 +46,11 @@ int main(){
 			case 7:
 				break;
 			case 8:
+				break;
+			case 9:
 				seguir = 0;
 				delete_list(primero);
-				break;
-				
+				break;				
 		}
 				
 	}

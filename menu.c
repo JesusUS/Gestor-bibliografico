@@ -10,6 +10,7 @@ void print_menu (){
 	printf ("6.- Exportar a fichero\n");
 	printf ("7.- Importar desde fichero\n");
 	printf ("8.- Ordenar por fechas descendente\n");
+	printf ("9.- Salir\n");
 	printf ("\n-------------------------------------------------\n\n");
 	
 }

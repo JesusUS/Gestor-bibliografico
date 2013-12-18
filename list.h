@@ -12,6 +12,7 @@ void show_publication(struct publicacion *, int);
 void update_publication (struct publicacion *, int);
 void delete_publication (struct publicacion *, int);
 void delete_list(struct publicacion *primero);
+void exit_app(struct publicacion);
 
 
 #endif /* _LIST_H_ */
