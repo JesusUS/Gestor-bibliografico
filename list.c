@@ -125,6 +125,12 @@ void add_node(struct publicacion **primero){
 void show_list(struct publicacion *primero){
 	
 	struct publicacion *aux = primero;
+	
+	if (primero == NULL){
+		printf ("Lista vacia\n");
+		return;
+	}
+	
 	while (aux != NULL){
 		
 		printf ("ID: %i\n", aux->id);
@@ -218,7 +224,11 @@ void delete_publication (struct publicacion *primero, int id){
 	if (primero->id == id){
 		struct publicacion *tmp = primero;
 		primero = primero->next;
-		free (tmp);
+		free (tmp->titulo_publicacion);
+		free (tmp->nombre_fuente);
+		free (tmp->autores);
+		if (tmp->tipo_contribucion == 0)
+			free (tmp->lugar_conferencia);
 		return;
 	}
 	
